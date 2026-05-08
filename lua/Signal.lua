@@ -36,7 +36,7 @@ local function swapAndPop(t, i)
 	t[size] = nil
 end
 local function tableclear(t)
-  for i in pairs(t) do
+  for i = #t, 1, -1 do
     t[i] = nil
   end
 end
