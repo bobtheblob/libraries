@@ -40,6 +40,13 @@ local function tableclear(t)
     t[i] = nil
   end
 end
+local function tablefind(t, tv)
+  for i, v in pairs(t) do
+    if v == tv then
+		return i
+	end
+  end
+end
 -----------------------
 local Connection = {}
 Connection.__index = Connection
@@ -52,7 +59,7 @@ function Connection:Disconnect()
     return
   end
   local signalTable = self[2]
-  local i = table.find(signalTable, self)
+  local i = tablefind(signalTable, self)
   if i then
     if self[3] then
       table.remove(signalTable, i)
