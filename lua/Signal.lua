@@ -36,7 +36,7 @@ local function swapAndPop(t, i)
 	t[size] = nil
 end
 local function tableclear(t)
-  for i in ipairs(t) do
+  for i in pairs(t) do
     t[i] = nil
   end
 end
@@ -67,7 +67,7 @@ end
 local function safecall(f, ...)
   local ok, err = pcall(f, ...)
   if not ok then
-    print("SIGNAL ERROR: "..f)
+    print("SIGNAL ERROR: "..err)
   end
 end
 local function isolatedsafecall(f, ...)
