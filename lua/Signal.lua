@@ -41,7 +41,7 @@ local function tableclear(t)
   end
 end
 local function tablefind(t, tv)
-  for i, v in pairs(t) do
+  for i, v in ipairs(t) do
     if v == tv then
 		return i
 	end
