@@ -1,6 +1,6 @@
 --[[
   5/8/2026
-  Signal module
+  Signal library
   API
     Signal.new(ordered: boolean?): Signal
       creates a new signal
